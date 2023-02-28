@@ -8,9 +8,7 @@ let activeImgIndex = 0
 const card = document.querySelector('.card')
 const imgs = document.querySelectorAll('.gallery-item')
 
-// imgs.addEventListener('mousedown', () => {
 
-// })
 
 
 openBtn.addEventListener('click', () => {
@@ -61,7 +59,16 @@ function slide(direction)
 
 }
 
-function selectImg()
+for(const thisimg of imgs)
 {
-
+    thisimg.addEventListener('click', () =>{
+        for(const img of imgs)
+        {
+            img.classList.remove('active')
+        }
+        thisimg.classList.add('active')
+        card.style.backgroundImage = thisimg.style.backgroundImage
+    })
 }
+
+
