@@ -1,0 +1,181 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 10px;
+    height: 100%;
+}
+
+h1 {
+    font-size: 3.2rem;
+}
+
+h2 {
+    font-size: 2.4rem;
+}
+body {
+    font-family: 'Manrope', sans-serif;
+    font-size: 10px;
+    height: 100%;
+    background-color: #0e1421;
+}
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    width: 1.5em;
+    height: 1.5em;
+  }
+
+.arrow:hover{
+    border:solid #fdfdfd;
+    border-width: 0 3px 3px 0;
+}
+  
+  .aright {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+  
+  .aleft {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
+
+.container{
+    display: flex;
+    position: relative; 
+    width: 70rem;
+    height: 40rem;
+    background-color: rgb(36, 35, 35);
+    margin: 0 auto;
+    margin-top: 9em;
+    transition: opacity 0.5s ease-in-out ;
+    
+
+    
+}
+
+@media screen and (max-width: 425px){
+    .container{
+        flex-direction: column;
+        width: 100%;
+        height: 70em;
+        align-items: center;
+    }
+}
+
+.left{
+    overflow: hidden;
+    margin: 1em 1em;
+    overflow: hidden;
+    position: relative;
+    
+    flex: 1;
+
+   
+}
+.right{
+    margin: 1.1em 1em;
+    
+    flex: 1;
+   
+}
+
+.card{
+    margin-bottom: 1em;
+    width: 34em;
+    height: 27em;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100em;
+    justify-content: space-between;
+    position: absolute;
+    /* overflow: hidden; */
+    
+}
+
+
+.gallery-item{
+    width: 8em;
+    height: 10em;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.active{
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.btn {
+    padding: 0;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+    display: block;
+    padding: 0.5em;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: color .3s ease-in-out, background-color .3s ease-in-out;
+}
+
+.btn:hover{
+    color: #fff;
+    background-color: black;
+}
+
+.close-btn{
+    position: absolute;
+    top: -9%;
+    right: -5%;
+}
+.btn-rigth{
+    
+    margin-bottom: 1em;
+}
+
+.color-change{
+    display: flex;
+    margin-bottom: 2em;
+    width: 8em;
+    justify-content: space-between;
+}
+
+.first{
+    width: 3em;
+    height: 3em;
+    cursor: pointer;
+}
+
+.second{
+    width: 3em;
+    height: 3em;
+    cursor: pointer;
+}
+.btn-group{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2em;
+    
+}
+.btn-group>.btn{
+    padding-left: 2em;
+    padding-right: 2em ;
+}
+
+.slider-btns{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 33em;
+    height: 27em;
+}

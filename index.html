@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Card layout</title>
+</head>
+<body>
+
+    <button class="btn" id="open"> open card </button>
+    <div class="container" style="opacity: 0;">
+        <button class="btn close-btn" id="close">X</button>
+        <div class="left">
+            <div class="card" style="background-image: url(./images/1.jpg);">
+                <div class="slider-btns">
+                    <button class=" btn aleft" id="left" style="background-color: transparent;">
+                        <p><i class="arrow"></i></p>
+                        
+                    </button>
+                    <button class=" btn aright" id="right" style="background-color: transparent;">
+                        <p><i class="arrow"></i></p>
+                    </button>
+                </div>
+            </div>
+            <div class="gallery">
+                <div class="gallery-item active" style="background-image: url(./images/1.jpg);"></div>
+                <div class="gallery-item" style="background-image: url(./images/2.jpg);"></div>
+                <div class="gallery-item" style="background-image: url(./images/3.jpg);"></div>
+                <div class="gallery-item" style="background-image: url(./images/4.jpg);"></div> 
+                <div class="gallery-item" style="background-image: url(./images/5.jpg);"></div>
+                <div class="gallery-item" style="background-image: url(./images/6.jpg);"></div>
+                <div class="gallery-item" style="background-image: url(./images/7.jpg);"></div>
+                
+                
+            </div>
+
+        </div>
+        <div class="right">
+            <button class="btn btn-rigth"> Item type</button>
+            <button class="btn btn-rigth"> Brand name</button>
+            <h1 style="color: aliceblue;">Item name</h1>
+            <h2 style="color: aliceblue;">&euro;3,400</h2>
+            <p style="font-size: 2em; margin-bottom: 1em; color: aliceblue;">Color</p>
+            <div class="color-change">
+                <div class="first" style="background-color: brown;">
+
+                </div>
+                <div class="second" style="background-color: blue;">
+                </div>
+            </div>
+            <p style="color: aliceblue;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta, alias consequuntur facilis velit, tempora quibusdam reiciendis illo aspernatur voluptas ex odio minima qui rem repellendus voluptate architecto nemo neque sequi?</p>
+            <div class="btn-group">
+                <button class="btn">BUY NOW</button>
+                <button class="btn">BUY NFT</button>
+                <button class="btn">VIEW IN 3D</button>
+            </div>
+            
+
+        </div>
+       
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
