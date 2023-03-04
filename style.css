@@ -96,20 +96,19 @@ body {
 
 .gallery{
     display: flex;
-    flex-wrap: wrap;
     max-width: 100em;
     justify-content: space-between;
     position: absolute;
-    /* overflow: hidden; */
-    
 }
 
 
 .gallery-item{
-    width: 8em;
-    height: 10em;
+    width: 9em;
+    height: 9em;
+    margin-right: 1em;
     background-size: cover;
     background-repeat: no-repeat;
+    display: block;
 }
 
 .active{
@@ -150,13 +149,7 @@ body {
     justify-content: space-between;
 }
 
-.first{
-    width: 3em;
-    height: 3em;
-    cursor: pointer;
-}
-
-.second{
+.color{
     width: 3em;
     height: 3em;
     cursor: pointer;
@@ -178,4 +171,8 @@ body {
     align-items: center;
     width: 33em;
     height: 27em;
+}
+
+.activecolor{
+    border: 2px solid whitesmoke;
 }
