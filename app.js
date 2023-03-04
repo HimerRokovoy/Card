@@ -3,16 +3,99 @@ const closeBtn = document.querySelector('#close')
 const container = document.querySelector('.container')
 const left = document.querySelector('#left')
 const right = document.querySelector('#right')
-const imgs1 =['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg']
+const blue = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg']
+const red = ['8.jpg', '9.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg']
+
+let isRed = true
+let isBlue = false
 let activeImgIndex = 0 
 const card = document.querySelector('.card')
-const imgs = document.querySelectorAll('.gallery-item')
+const chooseColorRed = document.querySelector('.red')
+const chooseColorBlue = document.querySelector('.blue')
+let imgs = document.querySelectorAll('.gallery-item')
+let gallery = document.querySelector('.gallery')
+const galleryItem = document.createElement('div')
+const activeImg = gallery.firstChild
+console.log('dcsd',activeImg)
+
+function fillGalery(color)
+{
+    let i = 0
+    for(const img of color )
+    {
+        
+        const galleryItem = document.createElement('div')
+        galleryItem.classList.add('gallery-item')
+        galleryItem.style.backgroundImage = `url(./images/${img})`
+        if(!i)
+        {
+            galleryItem.classList.add('active')
+            i++
+            card.style.backgroundImage = galleryItem.style.backgroundImage 
+        }
+        gallery.append(galleryItem)
+
+       
+        
+    }
+     imgs = document.querySelectorAll('.gallery-item')
+    
+    for(const thisimg of imgs)
+    {
+        thisimg.addEventListener('click', () =>{
+            for(const img of imgs)
+            {
+                img.classList.remove('active')
+            }
+            thisimg.classList.add('active')
+            card.style.backgroundImage = thisimg.style.backgroundImage
+        })
+    }
+    
+
+}
+
+function freeGallery()
+{
+    while(gallery.firstChild) 
+    {
+        gallery.firstChild.remove()
+    }
+    activeImgIndex = 0
+}
 
 
 
+chooseColorRed.addEventListener('mousedown', () =>{
+    
+    if(!isRed)
+    {
+        chooseColorBlue.classList.remove('activecolor')
+        chooseColorRed.classList.add('activecolor')
+        freeGallery()
+        fillGalery(red)
+        isRed = true
+        isBlue = false
+    }
+})
+
+chooseColorBlue.addEventListener('click', () =>{
+    
+    if(!isBlue)
+    {
+        chooseColorRed.classList.remove('activecolor')
+        chooseColorBlue.classList.add('activecolor')
+        freeGallery()
+        fillGalery(blue)
+        isBlue = true
+        isRed = false
+    }
+})
 
 openBtn.addEventListener('click', () => {
     container.style.opacity = 1;
+    fillGalery(red);
+    console.log('imgs',imgs)
 })
 
 closeBtn.addEventListener('click', () =>{
@@ -29,46 +112,40 @@ right.addEventListener('click', () =>{
 
 
 
+
+
+activeImgIndex = 0
+
 function slide(direction)
 {
     if(direction === 'left')
     {
         if(activeImgIndex === 0)
-        activeImgIndex = imgs1.length - 1
+        activeImgIndex = imgs.length - 1
         else
         activeImgIndex--
     }
     else if(direction === 'right')
     {
-        if(activeImgIndex === imgs1.length - 1)
+        if(activeImgIndex === imgs.length - 1)
         activeImgIndex = 0
         else
         activeImgIndex++
     }
-
+        
     for(const img of imgs)
     {
         img.classList.remove('active')
     }
 
     imgs[activeImgIndex].classList.add('active')
-    card.style.backgroundImage = `url(./images/${imgs1[activeImgIndex]})`
+    card.style.backgroundImage = imgs[activeImgIndex].style.backgroundImage
     
 
 
 
 }
 
-for(const thisimg of imgs)
-{
-    thisimg.addEventListener('click', () =>{
-        for(const img of imgs)
-        {
-            img.classList.remove('active')
-        }
-        thisimg.classList.add('active')
-        card.style.backgroundImage = thisimg.style.backgroundImage
-    })
-}
+
 
 
